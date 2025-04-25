@@ -27,20 +27,21 @@ namespace ejercicio_1 {
      * al igual que el porcentaje del descuento (20%) y el porcentaje de
      * impuestos agregado a cada artículo (15%).
      */
+
     const MINIMO_DESCUENTO  = 200;
     const PORC_DESCUENTO    = 0.8;
     const PORC_IMPUESTO     = 1.15;
 
-    /* Función para calcular el precio total de la compra, sin descuentos,
-     * con impuestos. Toma como argumento un arreglo donde las llaves son los
+    /* Función para calcular el precio de cada conjunto de artículos, con
+     * impuestos. Toma como argumento un arreglo donde las llaves son los
      * artículos en cuestión, y los valores la cantidad de esos artículos
-     * que se llevan. Retorna la suma total de multiplicar las cantidades de
-     * los artículos en el arreglo de entrada por su valor unitario ubicado en
-     * el arreglo constante PRECIOS_UNITARIOS_USD, redondeado al segundo
-     * decimal hacia arriba.
+     * que se llevan. Retorna otro arreglo donde las llaves son los artículos
+     * y los valores son el precio unitario multiplicado por el porcentaje de
+     * impuestos PORC_IMPUESTO y multiplicado por la cantidad especificada en
+     * el arreglo de entrada.
      */
 
-    function calcular_precio_total(array $cantidad_articulos): float
+    function calcular_precio_articulos(array $cantidad_articulos): array
     {
         $precios_segun_cantidad = array();
         foreach ($cantidad_articulos as $articulo => $cantidad)
@@ -48,7 +49,26 @@ namespace ejercicio_1 {
                 $precios_segun_cantidad,
                 (PRECIOS_UNITARIOS_USD[$articulo] * PORC_IMPUESTO) * $cantidad
             );
-        return round(array_sum($precios_segun_cantidad), 2, PHP_ROUND_HALF_UP);
+
+        return array_combine(
+            array_keys($cantidad_articulos),
+            $precios_segun_cantidad
+        );
+    }
+
+    /* Función que calcula el precio total de la compra, sin descuentos. Toma
+     * como argumentos un arreglo donde las llaves son los artículos, y sus
+     * valores son los precios por cantidad más impuestos. El valor retornado
+     * será redondeado al segundo decimal hacia arriba.
+     */
+
+    function calcular_precio_total(array $precios_por_cantidad): float
+    {
+        return round(
+            array_sum(array_values($precios_por_cantidad)),
+            2,
+            PHP_ROUND_HALF_UP
+        );
     }
 
     /* Determina si el valor final de la compra amerita descuento. Toma como
@@ -62,13 +82,15 @@ namespace ejercicio_1 {
     }
 
     /* Función que aplica el descuento necesario. Toma como argumento el total
-     * de la venta, y retorna ese valor multiplicado por el porcentaje de
-     * descuento.
+     * de la venta, y le multiplica el porcentaje de descuento. Al ser el
+     * parámetro "total_venta" un parámetro por referencia, se modifica el
+     * valor del parámetro mismo, ya que se modifica el valor almacenado en
+     * esa dirección de memoria, por lo que no se necesita retornar nada.
      */
 
-    function aplicar_descuento(float &$total_venta): float
+    function aplicar_descuento(float &$total_venta): void
     {
-        return round($total_venta * PORC_DESCUENTO, 2, PHP_ROUND_HALF_UP);
+        $total_venta = round($total_venta * PORC_DESCUENTO, 2, PHP_ROUND_HALF_UP);
     }
 
     /* Creamos una función que genere un arreglo con un carrito de compras
@@ -96,10 +118,9 @@ namespace ejercicio_1 {
 
         // Convertimos a arreglo asociativo con cantidades pseudo-aleatorias
         // de artículos.
-        $carro_articulos = array_fill_keys(
-            $carro_articulos,
-            random_int(1, count($carro_articulos))
-        );
+        $carro_articulos = array_flip($carro_articulos);
+        foreach (array_keys($carro_articulos) as $key)
+            $carro_articulos[$key] = random_int(1, count($carro_articulos));
 
         return $carro_articulos;
     }
@@ -112,9 +133,20 @@ namespace ejercicio_1 {
         echo "Los artículos en carrito en esta iteración son:\n";
         foreach ($carrito_compras as $articulo => $cantidad)
             echo "\t- {$articulo}: {$cantidad}\n";
-        $monto_final = calcular_precio_total($carrito_compras);
-        if (requiere_descuento($monto_final))
+
+        $precios_por_cantidad = calcular_precio_articulos($carrito_compras);
+        echo "Los precios de cada conjunto de artículos son:\n";
+        foreach ($precios_por_cantidad as $articulo => $precio)
+            echo "\t- {$articulo}: \${$precio}\n";
+
+        $monto_final = calcular_precio_total($precios_por_cantidad);
+        $mensaje_descuento = "El monto total son \${$monto_final}. ";
+        if (requiere_descuento($monto_final)) {
+            echo $mensaje_descuento . "Se aplica descuento (20%).\n";
             aplicar_descuento($monto_final);
+        } else
+            echo $mensaje_descuento . "No se aplica descuento.\n";
+
         echo "El monto final a pagar son \${$monto_final}.\n";
     }
 
