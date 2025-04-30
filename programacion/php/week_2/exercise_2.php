@@ -105,7 +105,7 @@ function passwd_valida(string $passwd): bool
 
 // Función para mostrar en consola si el nombre de usuario es válido.
 
-function validar_nombre_usuario($nombre_usuario): void
+function validar_nombre_usuario(string $nombre_usuario): void
 {
     echo (
         nombre_usuario_valido($nombre_usuario)
@@ -116,7 +116,7 @@ function validar_nombre_usuario($nombre_usuario): void
 
 // Función para mostrar en consola si la contraseña es válida.
 
-function validar_passwd($passwd): void
+function validar_passwd(string $passwd): void
 {
     echo (
         passwd_valida($passwd)
