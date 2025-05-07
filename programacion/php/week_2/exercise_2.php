@@ -1,6 +1,6 @@
 <?php
 
-namespace ejercicio_2;
+namespace semana_2\ejercicio_2;
 
 // Definimos las longitudes mínimas y máximas como constantes.
 const NOMBRE_LONG_MIN = 6;

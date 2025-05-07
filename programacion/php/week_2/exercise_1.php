@@ -1,6 +1,6 @@
 <?php
 // Usamos un espacio de nombres para compartimentalizar.
-namespace ejercicio_1;
+namespace semana_2\ejercicio_1;
 
 /* Para organizar el código, utilizaremos un arreglo asociativo como hash table
  * entre el nombre del artículo y el precio unitario. Cabe decir que los
