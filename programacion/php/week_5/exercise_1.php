@@ -5,15 +5,7 @@ namespace semana_5\ejercicio_1;
 // Para especificar el tipo de retorno de una función definida por mi.
 use DateTimeImmutable;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-// Considerando que el restautant se encuentra en Barranquilla, Colombia,
-=======
 // Considerando que el restaurant se encuentra en Barranquilla, Colombia,
->>>>>>> staging
-=======
-// Considerando que el restaurant se encuentra en Barranquilla, Colombia,
->>>>>>> staging
 // se configura dicha zona horaria para el resto del programa en formato IANA.
 date_default_timezone_set('America/Bogota');
 
