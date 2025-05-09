@@ -6,7 +6,11 @@ namespace semana_5\ejercicio_1;
 use DateTimeImmutable;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Considerando que el restautant se encuentra en Barranquilla, Colombia,
+=======
+// Considerando que el restaurant se encuentra en Barranquilla, Colombia,
+>>>>>>> staging
 =======
 // Considerando que el restaurant se encuentra en Barranquilla, Colombia,
 >>>>>>> staging
