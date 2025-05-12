@@ -27,6 +27,15 @@ enum AreaReserva: int
     case Comedor = 0;
     case Salon   = 1;
     case Terraza = 2;
+
+    function a_string(): string
+    {
+        return match ($this) {
+            AreaReserva::Comedor => 'comedor',
+            AreaReserva::Salon   => 'salón',
+            AreaReserva::Terraza => 'terraza',
+        };
+    }
 }
 
 /* Se hace lo mismo con los menús especiales, un tipo enumerado respaldado en
@@ -41,6 +50,17 @@ enum MenuEspecial: int
     case Boda        = 2;
     case Cumpleanios = 3;
     case Graduacion  = 4;
+
+    function a_string(): string
+    {
+        return match ($this) {
+            MenuEspecial::SinMenu     => 'ninguno',
+            MenuEspecial::Aniversario => 'aniversario',
+            MenuEspecial::Boda        => 'boda',
+            MenuEspecial::Cumpleanios => 'cumpleaños',
+            MenuEspecial::Graduacion  => 'graduación',
+        };
+    }
 }
 
 /* Creo una función para procesar las fechas de reserva según el formato
