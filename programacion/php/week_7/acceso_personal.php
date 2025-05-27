@@ -2,6 +2,7 @@
 
 namespace semana_7;
 
+// Constantes para validar largo establecido de caracteres para cada campo.
 const LARGO_USUARIO_MAX = 10;
 const LARGO_PASSWD_MIN  = 8;
 
@@ -59,6 +60,13 @@ function validar_passwd(string $passwd): void
     );
 }
 
+/**
+ * En este caso, la función 'run' toma los datos provenientes del formulario
+ * 'form_acceso_personal', que envía los datos solicitados a través del método
+ * HTTP POST, por lo que se debe usar la variable superglobal '_POST' de PHP
+ * para acceder a los datos ingresados en el formulario. Luego dichos datos son
+ * procesados por las funciones presentes en este archivo para validarlos.
+ */
 function run(): void
 {
     validar_usuario($_POST['username']);
