@@ -14,6 +14,7 @@
         <li>Associative arrays: <a href="countries/countries.php">Countries</a></li>
         <li>Week 1: <a href="week_1/exercises.php">Variables and operators</a></li>
         <li>Week 2: <a href="week_2/exercises.php">Functions</a></li>
+        <li>Week 7: <a href="week_7/index.html">Forms</a></li>
     </ul>
     <br>
 </body>
