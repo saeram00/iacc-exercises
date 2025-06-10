@@ -21,6 +21,9 @@ function run(): void
     $usuario->registrar_usuario();
     $carrito = new Carrito($usuario);
     $carrito_compras = $carrito->generar_carrito();
+    $cantidad_total = $carrito->get_cantidad_articulos();
+    echo $carrito->get_usuario() . PHP_EOL;
+    echo "La cantidad de artículos en este carrito es: {$cantidad_total}." . PHP_EOL;
     echo 'Los artículos en carrito en esta iteración son:' . PHP_EOL;
     foreach ($carrito_compras as $articulo => $cantidad)
         echo "\t- {$articulo}: {$cantidad}" . PHP_EOL;
