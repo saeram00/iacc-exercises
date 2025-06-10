@@ -88,6 +88,12 @@ class CarritoCompras
     private readonly Usuario $usuario;
 
     /**
+     * Esta propiedad almacena la cantidad de artículos totales presentes en
+     * el carrito de compras como variable de solo lectura.
+     */
+    private readonly int $cantidad_articulos;
+
+    /**
      * El método constructor tomará como argumento una instancia de la clase
      * 'ValidadorUsuarios' (alias 'Usuario'), la cuál será asignada a la
      * propiedad 'usuario' de la clase 'CarritoCompras'.
@@ -103,6 +109,13 @@ class CarritoCompras
     public function get_usuario(): string
     {
         return "Dueño del carrito: {$this->usuario}";
+    }
+
+    // Se crea el método 'getter' para la propiedad 'cantidad_articulos'.
+
+    public function get_cantidad_articulos(): int
+    {
+        return $this->cantidad_articulos;
     }
 
     /**
@@ -178,6 +191,8 @@ class CarritoCompras
             foreach (array_keys($carro_articulos) as $key)
                 $carro_articulos[$key] = random_int(1, count($carro_articulos));
         } while (array_sum(array_values($carro_articulos)) > self::MAX_ARTICULOS);
+
+        $this->cantidad_articulos = array_sum(array_values($carro_articulos));
 
         return $carro_articulos;
     }
