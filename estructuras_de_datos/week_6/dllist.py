@@ -68,7 +68,7 @@ class NodoTarea:
             (
                 "\n[",
                 f"\tTarea: '{self.titulo.capitalize()}'",
-                f"\tRequerimientos: '{' '.join(self.requerimientos)}'",
+                f"\tRequerimientos: '{', '.join(self.requerimientos)}'",
                 f"\tPrioridad: '{self.__prioridad}'",
                 f"\tFecha límite: '{self.__fecha_limite.strftime('%A, %x, %X')}'",
                 "],",
@@ -121,22 +121,22 @@ class ListaTareas:
     def __init__(self):
         self._inicio: Nodo = None
         self._fin: Nodo = None
-        self.cantidad_nodos: int = 0
+        self._cantidad_nodos: int = 0
 
     def __str__(self) -> str:
         return "\n".join(
             (
                 "\nListado de tareas",
                 f"Más urgente: {self._inicio}",
-                f"Pendientes: {self.cantidad_nodos}",
+                f"Pendientes: {self._cantidad_nodos}",
             )
         )
 
     def __lista_esta_llena(self) -> bool:
-        return self.cantidad_nodos == self.__CAPACIDAD_MAXIMA
+        return self._cantidad_nodos == self.__CAPACIDAD_MAXIMA
 
     def __lista_esta_vacia(self) -> bool:
-        return self.cantidad_nodos == 0
+        return self._cantidad_nodos == 0
 
     def __ordenar_lista(self) -> None:
         """
@@ -202,7 +202,7 @@ class ListaTareas:
             nueva_tarea.anterior = self._fin
             self._fin.siguiente = nueva_tarea
             self._fin = nueva_tarea
-        self.cantidad_nodos += 1
+        self._cantidad_nodos += 1
         self.__ordenar_lista()
 
     def eliminar_tarea(self, titulo: str) -> bool:
@@ -224,7 +224,7 @@ class ListaTareas:
                 else:
                     self._fin = actual.anterior
 
-                self.cantidad_nodos -= 1
+                self._cantidad_nodos -= 1
                 return True
             actual = actual.siguiente
         return False
