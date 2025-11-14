@@ -1,58 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu del Restaurant</title>
+    <title>"Donde el Richard"</title>
 </head>
+
 <body>
-    <header>
+
+    <header class="header">
         <nav>Inicio</nav>
         <nav>Platos de fondo</nav>
         <nav>Postres</nav>
         <nav>Bebidas</nav>
         <nav>Especialidades</nav>
     </header>
-    <h1><u>Nombre del restaurante</u></h1>
-    <section>
-        <h2><u>Platos de fondo</u></h2>
-        <ul>
-            <li><em>Pastel de choclo</em> => <strong>$5.500</strong></li>
-            <li><em>Charquic&aacute;n</em> => <strong>$5.000</strong></li>
-            <li><em>Bistec a lo pobre</em> => <strong>$5.500</strong></li>
-            <li><em>Porotos con rienda</em> => <strong>$5.000</strong></li>
-        </ul>
+
+    <section class="introduccion">
+        <h1><u>Restaurant <em>"Donde el Richard"</em></u></h1>
+        <h2><u>¿Quiénes somos?</u></h2>
+        <p>Descripción del Restaurant</p>
     </section>
-    <section>
-        <h2><u>Postres</u></h2>
-        <ul>
-            <li><em>Leche asada</em> => <strong>$4.000</strong></li>
-            <li><em>Pie de lim&oacute;n</em> => <strong>$4.500</strong></li>
-            <li><em>Flan</em> => <strong>$4.000</strong></li>
-            <li><em>Picarones</em> => <strong>$4.000</strong></li>
-        </ul>
+
+    <h2><u>Menú</u></h2>
+    <section class="seccion-menu">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"><u>Platos de fondo</u></th>
+                </tr>
+                <th>Nombre plato</th>
+                <th>Precio</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>Pastel de choclo</em></td>
+                    <td><strong>$5.500</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Charquic&aacute;n</em></td>
+                    <td><strong>$5.000</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Bistec a lo pobre</em></td>
+                    <td><strong>$5.500</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Porotos con rienda</em></td>
+                    <td><strong>$5.000</strong></td>
+                </tr>
+            </tbody>
+        </table>
     </section>
-    <section>
-        <h2><u>Bebidas</u></h2>
-        <ul>
-            <li><em>Jugo natural</em> => <strong>$1.000</strong></li>
-            <li><em>T&eacute;</em> => <strong>$800</strong></li>
-            <li><em>Caf&eacute;</em> => <strong>$1.000</strong></li>
-            <li><em>Cerveza artesanal</em> => <strong>$3.000</strong></li>
-            <li><em>Vino nacional</em> => <strong>$4.000</strong></li>
-            <li><em>Vino importado</em> => <strong>$4.500</strong></li>
-        </ul>
+
+    <section class="seccion-menu">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"><u>Postres</u></th>
+                </tr>
+                <th>Nombre postre</th>
+                <th>Precio</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>Leche asada</em></td>
+                    <td><strong>$4.000</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Pie de lim&oacute;n</em></td>
+                    <td><strong>$4.500</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Flan</em></td>
+                    <td><strong>$4.000</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Picarones</em></td>
+                    <td><strong>$4.000</strong></td>
+                </tr>
+            </tbody>
+        </table>
     </section>
-    <section>
+
+    <section class="seccion-menu">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"><u>Bebidas</u></th>
+                </tr>
+                <th>Nombre bebida</th>
+                <th>Precio</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>Jugo natural</em></td>
+                    <td><strong>$1.000</strong></td>
+                </tr>
+                <tr>
+                    <td><em>T&eacute;</em></td>
+                    <td><strong>$800</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Caf&eacute;</em></td>
+                    <td><strong>$1.000</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Cerveza artesanal</em></td>
+                    <td><strong>$3.000</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Vino nacional</em></td>
+                    <td><strong>$4.000</strong></td>
+                </tr>
+                <tr>
+                    <td><em>Vino importado</em></td>
+                    <td><strong>$4.500</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="especialidades">
         <h2><u><font color="red">Especialidades</font></u></h2>
         <ul>
             <li><em>Congrio frito más acompañamiento</em> => <strong>$7.500</strong></li>
             <li><em>Asado a las brasas</em> => <strong>$8.000</strong></li>
         </ul>
     </section>
-    <footer>
+
+    <footer class="footer">
         <address>Restaurantes Chilenos S.A.</address>
         <address>Av. Bernardo O'Higgins 3445</address>
     </footer>
+
 </body>
 </html>
