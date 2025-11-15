@@ -4,34 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/programacion_web_1/">
     <title>"Donde el Richard"</title>
 </head>
 
 <body>
 
     <header class="header">
-        <nav>Inicio</nav>
-        <nav>¿Quiénes somos?</nav>
-        <nav>Platos de fondo</nav>
-        <nav>Postres</nav>
-        <nav>Bebidas</nav>
-        <nav>Especialidades</nav>
-        <nav>Promociones especiales</nav>
-        <nav>Plato de la semana</nav>
+        <nav class="navegacion">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
+                <li><a href="#menu">Men&uacute;</a></li>
+                <ul>
+                    <li><a href="#platos-de-fondo">Platos de fondo</a></li>
+                    <li><a href="#postres">Postres</a></li>
+                    <li><a href="#bebidas">Bebidas</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#promociones-especiales">Promociones especiales</a></li>
+                </ul>
+                <li><a href="#plato-de-la-semana">Plato de la semana</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="introduccion">
         <h1><u>Restaurant <em>"Donde el Richard"</em></u></h1>
-        <h2><u>¿Quiénes somos?</u></h2>
-        <p>Restaurant de comida t&iacute;pica chilena que busca dar un ambiente hogareño para otorgar una experiencia aut&eacute;ntica de cultura chilena a su mesa.</p>
+        <h2 id="quienes-somos"><u>¿Qui&eacute;nes somos?</u></h2>
+        <p>Restaurant de comida t&iacute;pica chilena que busca dar un ambiente hogare&ntilde;o para otorgar una experiencia aut&eacute;ntica de cultura chilena a su mesa.</p>
     </section>
 
     <section class="menu">
-        <h2><u>Menú</u></h2>
+        <h2 id="menu"><u>Men&uacute;</u></h2>
 
         <section class="seccion-menu">
-            <h3><u>Platos de fondo</u></h3>
+            <h3 id="platos-de-fondo"><u>Platos de fondo</u></h3>
             <table>
                 <thead>
                     <tr>
@@ -62,7 +68,7 @@
         </section>
 
         <section class="seccion-menu">
-            <h3><u>Postres</u></h3>
+            <h3 id="postres"><u>Postres</u></h3>
             <table>
                 <thead>
                     <tr>
@@ -93,11 +99,11 @@
         </section>
 
         <section class="seccion-menu">
-            <h3><u>Bebidas</u></h3>
+            <h3 id="bebidas"><u>Bebidas</u></h3>
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2">Selección de bebestibles para acompañar su comida.</th>
+                        <th colspan="2">Selección de bebestibles para acompa&ntilde;ar su comida.</th>
                     </tr>
                     <th>Nombre bebida</th>
                     <th>Precio</th>
@@ -136,17 +142,17 @@
         </section>
 
         <section class="especialidades">
-            <h3><u><font color="red">Especialidades</font></u></h3>
+            <h3 id="especialidades"><u><font color="red">Especialidades</font></u></h3>
             <dl>
-                <dt><em>Congrio frito m&aacute;s acompañamiento</em> => <strong>$7.500</strong></dt>
-                <dd>Trozo de congrio apanado frito en sart&eacute;n a la mantequilla, con acompañamiento a elecci&oacute;n entre arroz graneado, papas cocidas, papas salteadas, papas fritas, pur&eacute; de papas, salteado de verduras o ensalada. (El tipo de acompañamiento no afecta el precio final).</dd>
+                <dt><em>Congrio frito m&aacute;s acompa&ntilde;amiento</em> => <strong>$7.500</strong></dt>
+                <dd>Trozo de congrio apanado frito en sart&eacute;n a la mantequilla, con acompa&ntilde;amiento a elecci&oacute;n entre arroz graneado, papas cocidas, papas salteadas, papas fritas, pur&eacute; de papas, salteado de verduras o ensalada. (El tipo de acompa&ntilde;amiento no afecta el precio final).</dd>
                 <dt><em>Asado a las brasas</em> => <strong>$8.000</strong></dt>
-                <dd>Selecci&oacute;n de carnes surtidas entre pollo, cerdo y vacuno, con longanizas y papas cocidas, servidas en una fuente sobre un pequeño brasero.</dd>
+                <dd>Selecci&oacute;n de carnes surtidas entre pollo, cerdo y vacuno, con longanizas y papas cocidas, servidas en una fuente sobre un peque&ntilde;o brasero.</dd>
             </dl>
         </section>
 
         <section class="promos">
-            <h3><u><font color="yellow">Promociones especiales</font></u></h3>
+            <h3 id="promociones-especiales"><u><font color="yellow">Promociones especiales</font></u></h3>
             <ul>
                 <li><em>Bistec a lo pobre + Bebida</em> => <strong>$6.000</strong></li>
                 <li><em>Charquic&aacute;n + Cerveza artesanal</em> => <strong>$6.500</strong></li>
@@ -156,16 +162,17 @@
     </section> <!-- Menú -->
 
     <section class="plato-semana">
-        <h2><u><font color="cyan">Plato de la semana</font></u></h2>
+        <h2 id="plato-de-la-semana"><u><font color="cyan">Plato de la semana</font></u></h2>
         <dl>
             <dt><em><u>Pastel de choclo</u></em></dt>
-            <dd>Servido tradicionalmente en un pote de greda, consiste en una base de carne picada (pollo, cerdo, vacuno, etc.) con salteado de cebolla, ajo y aliños, sobre la que reposa una pasta de choclo molido cuya superficie est&aacute; gratinada con queso.</dd>
+            <dd>Servido tradicionalmente en un pote de greda, consiste en una base de carne picada (pollo, cerdo, vacuno, etc.) con salteado de cebolla, ajo y ali&ntilde;os, sobre la que reposa una pasta de choclo molido cuya superficie est&aacute; gratinada con queso.</dd>
         </dl>
-        <img src="week_2/media/pastel_choclo_1.jpeg" alt="La imagen muestra un pastel de choclo servido sobre una mesa de madera, en su t&iacute;pico pote de greda, con servicios a los costados.">
-        <img src="week_2/media/pastel_choclo_2.jpeg" alt="La imagen muestra un pastel de choclo junto a un par de choclos ubicados al costado, indicando el ingrediente principal de este platillo.">
+        <img src="../week_2/media/pastel_choclo_1.jpg" height="200" width="256" alt="La imagen muestra un pastel de choclo servido sobre una mesa de madera, en su t&iacute;pico pote de greda, con una cuchara de madera sobre su superficie.">
+        <img src="../week_2/media/pastel_choclo_2.jpg" height="256" width="256" alt="La imagen muestra un pastel de choclo junto a un par de choclos ubicados a un costado, indicando el ingrediente principal de este platillo.">
         <audio controls>
-            <source src="week_2/media/pastel_choclo_prep.mp3" type="audio/mp3">
+            <source src="../week_2/media/pastel_choclo_prep.mp3" type="audio/mp3">
         </audio>
+        <p>Si quieren hacer este plato en casa, pueden seguir la siguiente receta haciendo click <a href="https://cocinachilena.cl/pastel-de-choclo-chilean-corn-pie/" target="_blank" rel="noopener noreferrer">aqu&iacute;</a>.</p>
     </section>
 
     <footer class="footer">
