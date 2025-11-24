@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Donde el Richard" - Registro de usuario</title>
+</head>
+
+<body>
+
+    <form method="post" action="../week_1/index.html" name="registro-usuario" id="registro-usuario">
+        <label for="registro-usuario">Ingrese los datos especificados:</label><br>
+        <label for="nombre-personal">Nombre:&ThinSpace;
+            <input type="text" name="nombre-personal" id="nombre-personal" placeholder="Primer nombre">
+        </label><br>
+        <label for="apellido">Apellido:&ThinSpace;
+            <input type="text" name="apellido" id="apellido" placeholder="Primer apellido">
+        </label><br>
+        <label for="tipo-id">Tipo de documento:&ThinSpace;
+            <select name="tipo-id" id="tipo-id">
+                <option value="dni">DNI</option>
+                <option value="rut">RUT</option>
+                <option value="cedula">C&eacute;dula</option>
+                <option value="pasaporte">Pasaporte</option>
+            </select>
+        </label><br>
+        <label for="num-id">N&uacute;mero de documento:&ThinSpace;
+            <input type="text" name="num-id" id="num-id" placeholder="Sin puntos, con gui&oacute;n">
+        </label><br>
+        <label for="fecha-nacimiento">Fecha de nacimiento:&ThinSpace;
+            <input type="date" name="fecha-nacimiento" id="fecha-nacimiento">
+        </label><br>
+        <label for="sexo">Sexo:&ThinSpace;
+            <label for="sexo-1">Masculino
+                <input type="radio" name="sexo" id="sexo-1" value="masculino">
+            </label>
+            <label for="sexo-2">Femenino
+                <input type="radio" name="sexo" id="sexo-2" value="femenino">
+            </label>
+        </label><br>
+        <label for="correo-e">Correo electr&oacute;nico:&ThinSpace;
+            <input type="email" name="correo-e" id="correo-e" placeholder="correo@email.com">
+        </label><br>
+        <label for="telefono">Tel&eacute;fono m&oacute;vil:&ThinSpace;
+            <input type="tel" name="telefono" id="telefono" placeholder="+56 9 1234 5678">
+        </label><br>
+        <label for="comentarios">Comentarios:&ThinSpace;
+            <textarea name="comentarios" id="comentarios" cols="30" rows="10"
+                placeholder="Introduzca cualquier informaci&oacute;n que considere relavante para su perfil.">
+            </textarea>
+        </label><br>
+        <input type="submit" value="Registrar"><br>
+    </form>
+
+</body>
+</html>
