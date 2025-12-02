@@ -1,0 +1,13 @@
+section.promos {
+
+    h3#promociones-especiales {
+        color: yellow;
+        background-color: black;
+        text-align: left;
+    }
+
+    li {
+        color: gold;
+        background-color: black;
+    }
+}
