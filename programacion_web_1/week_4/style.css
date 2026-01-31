@@ -1,32 +1,202 @@
 @import url("./promos.css");
+@import url("../week_7/responsivo.css");
+
+/* =========================
+    CONFIGURACIÓN GENERAL
+========================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #2c3e50;
+}
+
+/* =========================
+    HEADER
+========================== */
+header.header {
+    background-color: #1c2833;
+    padding: 20px;
+    border-bottom: 5px solid #f1c40f;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1c2833;
+    padding: 15px;
+}
+
+.navegacion ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navegacion li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================
+    SECCIÓN INTRODUCCIÓN
+========================== */
+section.introduccion {
+    background-color: #000;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+section.introduccion h1 {
+    color: gold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+section.introduccion h2 {
+    color: aquamarine;
+}
+
+section.introduccion p {
+    color: mediumturquoise;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================
+    MENÚ Y TABLAS
+========================== */
+section.menu {
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+}
 
 section.seccion-menu {
+    margin-bottom: 30px;
+}
 
-    h3 {
-        color: gold;
-        background-color: black;
-        text-align: center;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: left;
+}
+
+table thead {
+    background-color: #f1c40f;
+}
+
+.precio-plato {
+    text-align: right;
+}
+
+/* =========================
+    LISTAS
+========================== */
+section.promos ul {
+    list-style-type: square;
+    padding-left: 20px;
+    background-color: #fcf3cf;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* =========================
+    PLATO DE LA SEMANA
+========================== */
+section.plato-semana {
+    background-color: #e8f8f5;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #48c9b0;
+    position: relative;
+}
+
+section.galeria-plato-semana {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section.galeria-plato-semana img {
+    width: 220px;
+    height: auto;
+    margin: 10px;
+    border: 3px solid #1abc9c;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    section.galeria-plato-semana {
+        flex-direction: column;
+        align-items: center;
     }
+}
 
-    table {
-        text-align: center;
+section.plato-semana audio,
+section.plato-semana iframe {
+    display: block;
+    margin-top: 15px;
+}
 
-        thead {
-            color: gold;
-            background-color: black;
-        }
+/* =========================
+    FOOTER
+========================== */
+footer.footer {
+    background-color: #1c2833;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 5px solid #f1c40f;
+}
 
-        tbody {
 
-            td.nombre-plato {
-                color: black;
-                background-color: grey;
-            }
+section,
+header.header,
+footer.footer {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-            td.precio-plato {
-                color: darkslateblue;
-                background-color: gainsboro;
-            }
-        }
-    }
+section {
+    margin-bottom: 30px;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: #eaf2f8;
+}
+
+section.plato-semana img {
+    display: inline-block;
+    vertical-align: top;
+}
+
+section.plato-semana iframe {
+    max-width: 100%;
+    border: 3px solid #48c9b0;
 }
